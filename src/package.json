@@ -1,0 +1,10 @@
+{
+  "name": "jimareed-hello-world",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Node.js Hello World docker container",
+  "author": "Jim Reed",
+  "dependencies": {
+    "express": "3.2.4"
+  }
+}
