@@ -5,8 +5,7 @@ Under development.  Simple nightwatch.js test suite.
 ## setup
 
 ```
-docker run -d -p 4444:4444 selenium/standalone-firefox
-npm install -g nightwatch
-cd smoke-test/src
-nightwatch --test
+docker run --name selenium -d -p 4444:4444 selenium/standalone-firefox
+docker run -d -p 8080:8080 --link selenium:selenium jimareed/smoke-test
+curl localhost:8080
 ```

@@ -1,10 +1,12 @@
 {
-  "name": "jimareed-hello-world",
+  "name": "jimareed-smoke-test",
   "private": true,
   "version": "0.0.1",
-  "description": "Node.js Hello World docker container",
+  "description": "simple smoke test using nightwatch",
   "author": "Jim Reed",
   "dependencies": {
     "express": "3.2.4"
+    "fs": "*",
+    "xml2js": "*"
   }
 }
