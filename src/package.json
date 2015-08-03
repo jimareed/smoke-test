@@ -5,7 +5,7 @@
   "description": "simple smoke test using nightwatch",
   "author": "Jim Reed",
   "dependencies": {
-    "express": "3.2.4"
+    "express": "3.2.4",
     "fs": "*",
     "xml2js": "*"
   }
