@@ -4,6 +4,7 @@ RUN sudo apt-get -qq install nodejs
 RUN sudo apt-get -qq install nodejs-legacy
 RUN sudo apt-get -qq install npm
 ADD src /src
-RUN cd /src; sudo npm install -g nightwatch
-EXPOSE 4444
+RUN cd /src; sudo npm install -g nightwatch; sudo npm install
+EXPOSE 8080
 CMD ["nightwatch", "--test"]
+CMD ["node", "/src/start.js"]
