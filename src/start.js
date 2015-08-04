@@ -16,6 +16,9 @@ var parser = new xml2js.Parser();
 //    });
 // });
 
-app.get(['/', '/smoke-test'], function (req, res) {
+app.get('/', function (req, res) {
   res.send('<html><body><p><b>Smoke Test</b></p><p/><p>' + results + '</p></body></html>\n');
 });
+
+app.listen(PORT)
+console.log('Running on http://localhost:' + PORT);
