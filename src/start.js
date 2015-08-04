@@ -6,15 +6,21 @@ var results = 'these are the results';
 
 var fs = require('fs'),
     xml2js = require('xml2js');
+var shell = require('shelljs');
 
+shell.cd('/src');
+shell.exec('nightwatch --test');
+shell.ls('/src/reports/*').forEach(function(file) {
+	console.log('file:' + file);
+	fs.readFile(file, function(err, data) {
+	   parser.parseString(data, function (err, result) {
+	       results = JSON.stringify(result);
+	   });
+	});
+});
 
 var parser = new xml2js.Parser();
 
-// fs.readFile('/src/reports/FIREFOX_39.0_LINUX_helloworld.xml', function(err, data) {
-//    parser.parseString(data, function (err, result) {
-//        results = JSON.stringify(result);
-//    });
-// });
 
 app.get('/', function (req, res) {
   res.send('<html><body><p><b>Smoke Test</b></p><p/><p>' + results + '</p></body></html>\n');
